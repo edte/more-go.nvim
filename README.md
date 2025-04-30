@@ -9,6 +9,7 @@ some go utils
 	{
 		"edte/more-go.nvim",
 		ft = "go",
+		opts = {},
 	},
 ```
 

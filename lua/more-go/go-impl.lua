@@ -723,7 +723,11 @@ end
 ---Setup the plugin with the given options
 ---@param user_opts Config
 function M.setup(user_opts)
-	config.init(user_opts)
+	-- config.init(user_opts)
+
+	-- vim.api.nvim_set_hl(0, "GoImplGoBlue", { fg = "#6BC6F0", bold = true })
+	-- vim.api.nvim_set_hl(0, "GoImplInterfaceIcon", { fg = "#a9b665", bold = true })
+	-- vim.api.nvim_set_hl(0, "GoImplHighlight", { fg = "#ea6962", bold = true })
 
 	vim.api.nvim_create_user_command("Impl", M.open, {})
 end
