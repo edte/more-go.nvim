@@ -1,30 +1,44 @@
-# marks.nvim
-show mark on sign bar
-
-![marks](https://github.com/user-attachments/assets/dc41210c-93f4-4688-9733-ee967c52cce4)
+# more-go.nvim
+some go utils
 
 ## 📦 Installation
 
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ```lua
-    {
-        "edte/cmp-go-pkgs.nvim",
-        ft = "go",
-        config = function()
-            require("cmp.cmp_go_pkgs").new()
-            require("cmp").register_source("go_pkgs", require("cmp.cmp_go_pkgs"))
-            vim.api.nvim_create_user_command("CurNode", function(c)
-                require("cmp_go_pkgs.source").kek(c)
-            end, {})
-        end,
-    },
+	{
+		"edte/more-go.nvim",
+		ft = "go",
+	},
 ```
 
 
 ## 📝 Configuration
+
+### blink
 ```lua
-{
+    sources = {
+      default = {
+        ...
+        "go_pkgs",
+      },
+      providers = {
+        go_pkgs = {
+          name = "Module",
+          module = "more-go.go-pkgs-blink",
+        }
+      }
+    }
+```
+
+### cmp
+```lua
+sources = {
+    ...
+    {
+        name = "go_pkgs",
+        priority = 7,
+    }
 }
 
 ```
@@ -32,5 +46,19 @@ show mark on sign bar
 
 ## 🚀 Usage
 
+### go package import
+![import](https://github.com/user-attachments/assets/0a38919e-fdcc-4513-88bc-fd1a189e1c33)
+
+### Implement show
+![Implement](https://github.com/user-attachments/assets/4e506953-5e41-4340-a810-93597e5bbe1a)
+
+### return values auto add
+https://github.com/user-attachments/assets/47880dbc-1e54-4fb9-9efe-36d2ef156ca1
+
+
 ## 📄 Thanks
-- [marks.nvim](https://github.com/chentoast/marks.nvim)
+- [impl.nvim](https://github.com/jack-rabe/impl.nvim)
+- [go-impl.nvim](https://github.com/fang2hou/go-impl.nvim)
+- [auto-fix-return.nvim](https://github.com/Jay-Madden/auto-fix-return.nvim)
+- [goplements.nvim](https://github.com/maxandron/goplements.nvim/)
+- [cmp-go-pkgs](https://github.com/Snikimonkd/cmp-go-pkgs)
