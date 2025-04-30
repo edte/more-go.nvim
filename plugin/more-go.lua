@@ -8,3 +8,5 @@ require("more-go.go-pkgs-blink").setup({})
 require("more-go.go-return").setup({})
 
 require("more-go.go-show").setup({})
+
+require("more-go.go-impl").setup({})
