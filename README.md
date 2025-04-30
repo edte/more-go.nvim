@@ -55,6 +55,8 @@ sources = {
 ### return values auto add
 https://github.com/user-attachments/assets/47880dbc-1e54-4fb9-9efe-36d2ef156ca1
 
+### implement interface
+https://github.com/user-attachments/assets/73a43c08-cbf7-45f6-9a78-96157eec6c88
 
 ## 📄 Thanks
 - [impl.nvim](https://github.com/jack-rabe/impl.nvim)

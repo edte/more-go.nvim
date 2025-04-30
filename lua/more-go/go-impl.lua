@@ -725,8 +725,7 @@ end
 function M.setup(user_opts)
 	config.init(user_opts)
 
-	M.open = M.open -- require("go-impl").open()
-	vim.api.nvim_create_user_command("GoImplOpen", M.open, {})
+	vim.api.nvim_create_user_command("Impl", M.open, {})
 end
 
 return M
