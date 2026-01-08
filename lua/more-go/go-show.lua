@@ -182,6 +182,12 @@ end
 --- @param names string[] The names to display
 M.set_virt_text = function(namespace, bufnr, line, prefix, names)
 	if #names > 0 then
+		-- Check if the line is within valid range
+		local line_count = vim.api.nvim_buf_line_count(bufnr)
+		if line < 0 or line >= line_count then
+			return -- Invalid line number, skip setting extmark
+		end
+
 		local impl_text = prefix .. table.concat(names, ", ")
 		local opts = {
 			virt_text = { { impl_text, M.config.highlight } },
