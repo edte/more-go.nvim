@@ -205,7 +205,13 @@ Return.wrap_golang_return = function()
         { new_line }
     )
 
-    vim.api.nvim_win_set_cursor(0, { final_end_row + 1, final_cursor_col })
+    -- Validate cursor position before setting to avoid "Cursor position outside buffer" error
+    local line_count = vim.api.nvim_buf_line_count(0)
+    local target_row = math.min(final_end_row + 1, line_count)
+    local target_line = vim.api.nvim_buf_get_lines(0, target_row - 1, target_row, false)[1] or ""
+    local target_col = math.min(final_cursor_col, #target_line)
+
+    vim.api.nvim_win_set_cursor(0, { target_row, target_col })
 end
 
 Return.setup = function(config)
