@@ -22,7 +22,6 @@ end
 
 Return.enable_autocmds = function()
     if command_id ~= 0 then
-        vim.notify("AutoFixReturn autocommands already enabled", vim.log.levels.INFO)
         return
     end
 
@@ -34,7 +33,6 @@ end
 
 Return.disable_autocomds = function()
     if command_id == 0 then
-        vim.notify("AutoFixReturn autocommands already disabled", vim.log.levels.INFO)
         return
     end
 
