@@ -12,7 +12,7 @@ end
 
 function M:enabled()
 	local function check_if_inside_imports()
-		local cur_node = require("nvim-treesitter.ts_utils").get_node_at_cursor()
+		local cur_node = vim.treesitter.get_node()
 
 		local func = cur_node
 		local flag = false
